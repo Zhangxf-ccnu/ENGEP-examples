@@ -119,7 +119,7 @@ locations = as.data.frame(cell_loc)
 locations = rename(locations, X0=X, X1=Y)
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=5)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/known_archetype.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/known_archetype.png)
 
 
 
@@ -181,7 +181,7 @@ diag(c) <- 0
 threshold <- sum(c)/((dim(pre_un)[1])*(dim(pre_un)[1]-1))
 plot_score(maxcor,threshold=0.232884)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/scores.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/scores.png)
 
 For genes belonging to known archetypes, we assign them to the closest matching known archetype.
 
@@ -197,7 +197,7 @@ arche_exp_n_log <- get_expression(cellidx,pre_un@assays$RNA@data[resultsfilter_u
 gene_expressions <- t(as.data.frame(arche_exp_n_log))
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=5)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/known_n.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/known_n.png)
 
 For genes belonging to novel archetypes, we utilize hierarchical clustering to group them into distinct archetypes.
 
@@ -220,5 +220,5 @@ arche_exp_un_log <-
 gene_expressions <- t(as.data.frame(arche_exp_un_log))
 plot_exp_pattern(ncol(as.data.frame(gene_expressions)),locations,gene_expressions,n_col=3)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/novel.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/novel.png)
 
