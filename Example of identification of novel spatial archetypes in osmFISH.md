@@ -60,7 +60,7 @@ locations = locations[rownames(gene_expressions),]
 
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/genes_of_osmFISH.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/genes_of_osmFISH.png)
 
 #### Identification of known spatial archetypes
 
@@ -122,7 +122,7 @@ locations = as.data.frame(cell_loc)
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=3)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_known.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_known.png)
 
 #### Identification of novel spatial archetypes
 
@@ -180,7 +180,7 @@ threshold <- sum(c)/((dim(pre_un)[1])*(dim(pre_un)[1]-1))
 plot_score(maxcor,threshold=0.3933951)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_scores.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_scores.png)
 
 For genes belonging to known archetypes, we assign them to the closest matching known archetype.
 
@@ -197,7 +197,7 @@ gene_expressions <- t(as.data.frame(arche_exp_n_log))
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=3)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_u_known.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_u_known.png)
 
 For genes belonging to novel archetypes, we utilize hierarchical clustering to group them into distinct archetypes.
 
@@ -219,4 +219,4 @@ arche_exp_un_log <-
 gene_expressions <- t(as.data.frame(arche_exp_un_log))
 plot_exp_pattern(ncol(as.data.frame(gene_expressions)),locations,gene_expres sions,n_col=2)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_novel.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_novel.png)
