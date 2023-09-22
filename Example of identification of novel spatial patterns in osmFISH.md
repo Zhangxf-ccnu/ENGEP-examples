@@ -59,7 +59,7 @@ locations = locations[rownames(gene_expressions),]
 
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions)
 ```
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/genes_of_osmFISH.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/genes_of_osmFISH.png)
 
 #### Identification of known spatial patterns
 
@@ -133,7 +133,7 @@ locations = as.data.frame(cell_loc)
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=6)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osmfish_measured_pattern.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osmfish_measured_pattern.png)
 
 #### Identification of novel spatial patterns
 
@@ -195,7 +195,7 @@ x_value_at_min_density <- density_estimation$x[max_indices[2] + min_density_inde
 plot_score(maxcor,density_estimation,x_value_at_min_density)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osmfish_density.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osmfish_density.png)
 
 For genes belonging to known patterns, we assign them to the closest matching known pattern.
 
@@ -215,7 +215,7 @@ gene_expressions <- t(as.data.frame(arche_exp_n))
 plot_exp_pattern(ncol(gene_expressions),locations,gene_expressions,n_col=3)
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_unmeasured_known_pattern.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_unmeasured_known_pattern.png)
 
 For genes belonging to novel patterns, we follow a meticulous three-step process to unveil these novel spatial patterns. First, we apply a filter to exclude genes with lower biological variability.  Specifically, we eliminate the lowest 10% of genes based on their mean expression levels. Subsequently, we further refine this set by removing the lowest 10% of genes with the least variability, employing the Seurat R package (FindVariableFeatures function).
 
@@ -299,7 +299,7 @@ plot_exp_pattern(ncol(as.data.frame(gene_expressions)),locations,gene_expression
 
 ```
 
-![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/master/docs/osm_novel_pattern.png)
+![image](https://github.com/Zhangxf-ccnu/ENGEP-examples/blob/main/docs/osm_novel_pattern.png)
 
 Following the identification of novel spatial patterns, we conduct a multifaceted analysis to explore their biological significance. First, we select representative genes from each pattern.
 
