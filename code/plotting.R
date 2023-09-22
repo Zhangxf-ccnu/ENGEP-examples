@@ -17,12 +17,39 @@ plot_exp_pattern <- function(n,locations,gene_expressions,pt_size=1,n_col=3) {
   grid.arrange(grobs = plots, nrow = ceiling(n / n_col))
 }
 
-plot_score<-function(maxcor,threshold){
-  df <- data.frame(correlation = maxcor)
-  ggplot(data=df,aes(x=correlation)) + 
-    geom_histogram(binwidth=0.05,fill="#69b3a2", 
-                   color="#e9ecef")+
-    geom_vline(xintercept = threshold)+ 
-    theme_bw()+
-    labs(x="correlation between genes and archetypes",y="")
+
+#####
+
+plot_score<-function(maxcor,density_estimation,x_value_at_min_density){
+  hist_data <- data.frame(
+    x = maxcor  
+  )
+  line_data <- data.frame(
+    x = density_estimation$x,  
+    y = density_estimation$y  
+  )
+  mmax = x_value_at_min_density+0.05
+  mmin = x_value_at_min_density-0.05
+  ggplot() +
+    geom_histogram(data = hist_data, aes(x = x,y=..density..),
+                   bins = 20, fill = "#20B2AA", color = "#e9ecef") +
+    geom_line(data = line_data, aes(x = x, y = y),linetype = 1,size=1.3,color = '#FF7F50') +
+    geom_vline(xintercept = mmin, linetype = "dashed",color = "#FF7F50",size=1.3) +
+    geom_vline(xintercept = mmax, linetype = "dashed",color = "#FF7F50",size=1.3) +
+    geom_point(data = data.frame(x = x_value_at_min_density, y = c(0)), aes(x, y), color = "blue", size = 3, shape = 1) +
+    labs(
+      x = "Likelihood scores",
+      y = "Density"
+    ) +
+    theme_minimal() +#theme_bw
+    theme(
+      axis.title.x = element_text(size = 12),
+      axis.title.y = element_text(size = 12),
+      axis.text.x = element_text(size = 10),
+      axis.text.y = element_text(size = 10),
+      legend.position = "none"
+    )
+  
 }
+
+
