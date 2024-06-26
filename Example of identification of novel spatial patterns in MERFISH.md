@@ -54,7 +54,8 @@ pre_genes <- common_hvg$x
 The predicted results can be obtained by running this function in ENGEP package.
 
 ```
-engep_predict <- engep_predict(merfish,ref_list,pre_genes)
+engep_predict_list <- engep_predict(merfish,ref_list,pre_genes)
+engep_predict <- engep_predict_list$ensemble$exp
 ```
 
 #### Identification of known spatial patterns

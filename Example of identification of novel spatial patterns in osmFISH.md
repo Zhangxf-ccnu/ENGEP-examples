@@ -45,7 +45,8 @@ pre_genes <- common_hvg$x
 The predicted results can be obtained by running this function.
 
 ```
-engep_predict <- engep_predict(osmfish,ref_list,pre_genes)
+engep_predict_list<- engep_predict(osmfish,ref_list,pre_genes)
+engep_predict <- engep_predict_list$ensemble$exp
 ```
 
 We can plot the expression patterns of these genes. Here, we plot expressions of three genes as an example.
